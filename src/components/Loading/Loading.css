@@ -20,7 +20,7 @@
 .loader:after {
   opacity: 0;
   box-sizing: border-box;
-  content: "\0020";
+  /* content: "\0020"; */
   position: absolute;
   top: 0;
   left: 0;
