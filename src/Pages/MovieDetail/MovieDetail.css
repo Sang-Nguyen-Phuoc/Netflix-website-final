@@ -1,0 +1,197 @@
+.movie-detail-container {
+  background-color: #fff;
+  height: 90px;
+}
+.singleHeading {
+  margin-top: 100px;
+  background-color: #1e272d;
+  padding: 15px 0;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.singleHeading h1 {
+  text-transform: uppercase;
+  font-size: 30px;
+}
+.singleHeading span {
+  word-spacing: 5px;
+  margin-left: 10px;
+}
+.singleHeading p {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+/* center the blockquote in the page */
+.blockquote-wrapper {
+  display: flex;
+  height: 30vh;
+  padding: 0px 80px;
+  position: absolute;
+}
+
+/* Blockquote main style */
+.blockquote {
+  position: absolute;
+  font-family: "Barlow Condensed", sans-serif;
+  max-width: 275px;
+  align-self: center;
+  top: 5%;
+  left: 298%;
+}
+
+/* Blockquote header */
+.blockquote h2 {
+  font-family: "Abril Fatface", cursive;
+  position: relative; /* for pseudos */
+  color: white;
+  font-size: 2.8rem;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
+  border: 2px solid #fff;
+  border: solid 2px;
+  border-radius: 20px;
+  padding: 25px;
+}
+
+/* Blockquote right double quotes */
+.blockquote h2:after {
+  content: "";
+  position: absolute;
+  border: 2px solid #e74848;
+  border-radius: 0 50px 0 0;
+  width: 60px;
+  height: 60px;
+  bottom: -62px;
+  left: 50px;
+  border-bottom: none;
+  border-left: none;
+  z-index: 3;
+}
+
+.blockquote h2:before {
+  content: "";
+
+  width: 80px;
+  border: 6px solid #292a2b;
+
+  z-index: 2;
+}
+
+/* increase header size after 600px */
+@media all and (min-width: 600px) {
+  .blockquote h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+}
+
+/* Blockquote subheader */
+.blockquote h4 {
+  position: relative;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+  padding-top: 15px;
+  z-index: 1;
+  margin-left: 140px;
+  padding-left: 52px;
+}
+
+.blockquote h4:first-letter {
+  margin-left: -12px;
+}
+
+.movie-detail {
+  margin-top: 26px;
+  display: flex;
+  gap: 22px;
+}
+.movie-img {
+  display: flex;
+  position: relative;
+  width: 30%;
+  height: 800px;
+}
+.movie-detail img {
+  width: auto;
+  height: 60%;
+  object-fit: contain;
+}
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  height: 800px;
+}
+.movie-info-overview {
+  color: #fff;
+  text-decoration: solid;
+  width: 75%;
+}
+.overview {
+  margin-top: 10px;
+  font-size: 50px;
+  font-weight: 500;
+  color: #fff;
+}
+.vote {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 40px;
+}
+
+.categories {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  text-align: center;
+  align-items: center;
+}
+
+.release-date,
+.genres {
+  margin-top: 22px;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  align-items: center;
+}
+
+/* design button play trailer */
+
+.play-trailer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 200px;
+  height: 50px;
+  background-color: #e74848;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.play-trailer:hover {
+  transform: scale(1.1);
+}
+
+.play-icon {
+  font-size: 24px;
+  margin-right: 5px;
+  margin-left: 0;
+}
