@@ -7,15 +7,23 @@ import { Routes, Route } from 'react-router-dom';
 import MovieDetail from './Pages/MovieDetail/MovieDetail'
 import Movies from './Pages/Movies/Movies';
 import TVSeries from './Pages/TVSeries/TVSeries';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AppContext from '../src/contexts/AppContext';
 import MyList from './Pages/MyList/MyList';
-
 
 
 function App() {
   const [movieList, setMovieList] = useState([]);
   const [added, setAdded] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const onAuthenticated = (status) => {
+    setIsAuthenticated(status);
+  };
+  useEffect(() => {
+
+    onAuthenticated();
+  }, []);
+
   const onAddToList = (movie) => {
     setMovieList([...movieList, movie]);
     setAdded(true);
@@ -26,11 +34,16 @@ function App() {
         movieList,
         onAddToList,
         added,
+        onAuthenticated,
+        isAuthenticated,
       }}
     >
       < div className="App container">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={isAuthenticated ? <Home /> : <Login />}
+          />
           <Route path="/Mylist" element={<MyList />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
@@ -39,6 +52,7 @@ function App() {
           <Route path="/movies/:movieId" element={<MovieDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+
       </div>
     </AppContext.Provider >
   );

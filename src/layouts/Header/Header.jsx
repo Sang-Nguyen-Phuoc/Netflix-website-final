@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./Header.css";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import AppContext from "../../contexts/AppContext";
 
 const Header = () => {
-
+  const { onAuthenticated } = useContext(AppContext);
   const [show, handleShow] = useState(false);
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const Header = () => {
               alt="Avatar" />
           </button>
           <div class="dropdown-content">
-            <Link to='/signup' className="dropdown-content-item"><div className="dropdown-content-item">Log out</div></Link>
+            <Link to='/signup' className="dropdown-content-item"><div className="dropdown-content-item" onClick={() => onAuthenticated(false)}>Log out</div></Link>
           </div>
         </div>
 

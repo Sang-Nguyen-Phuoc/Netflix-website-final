@@ -1,14 +1,15 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { auth } from "../../firebase";
 import { Link } from "react-router-dom";
 import "./Signup.css";
 import { useNavigate } from "react-router-dom";
-
+import AppContext from "../../contexts/AppContext";
 
 
 
 const Signup = () => {
+  const { isAuthenticated, onAuthenticated } = useContext(AppContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isEmailed, setIsEmailed] = useState(true);
@@ -43,7 +44,7 @@ const Signup = () => {
     });
   };
 
-
+  console.log(isAuthenticated);
 
 
   return (

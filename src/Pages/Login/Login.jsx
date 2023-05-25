@@ -1,10 +1,11 @@
 import "./Login.css"
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { auth } from "../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import Loading from "../../components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
+import AppContext from "../../contexts/AppContext";
 
 
 
@@ -15,10 +16,12 @@ const Login = () => {
   const [isPassworded, setIsPassworded] = useState(true);
   const [isSignedIn, setIsSignedIn] = useState(true);
   const [isLoading, setisLoading] = useState(true);
+  const { isAuthenticated, onAuthenticated } = useContext(AppContext);
   const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password).then(() => {
+      onAuthenticated(true);
       navigate("/");
     }).catch((error) => {
       if (error.code === "auth/missing-email") {
@@ -45,7 +48,7 @@ const Login = () => {
     setisLoading(false);
   }, 1000);
 
-
+  console.log(isAuthenticated);
 
   return (
     <>

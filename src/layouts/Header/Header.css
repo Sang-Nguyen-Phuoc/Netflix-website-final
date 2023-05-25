@@ -51,6 +51,7 @@
 
 .nav_option:hover {
   scale: 1.05;
+  text-decoration: none;
 }
 
 .nav_options_black {
@@ -60,13 +61,13 @@
   font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease-in;
+  transition: all 0.2s;
 }
 
 .nav_options_black .nav_option:hover {
-  color: #111;
-  background-color: #e6e6e6;
-  border-radius: 10px;
+  background-color: #ef370e;
+  text-decoration: none;
+  border-radius: 50px;
 }
 
 /* Dropdown Button */
