@@ -16,22 +16,10 @@ import MyList from './Pages/MyList/MyList';
 function App() {
   const [movieList, setMovieList] = useState([]);
   const [added, setAdded] = useState(false);
-  const onAddToList = (id, movie) => {
-    const existingMovie = movieList.find((m) => m.id === id);
-
-    if (existingMovie) {
-      // Movie already exists, so remove it from the list
-      const updatedList = movieList.filter((m) => m.id !== id);
-      setMovieList(updatedList);
-      setAdded(false);
-    } else {
-      // Movie doesn't exist, so add it to the list
-      const updatedList = [...movieList, movie];
-      setMovieList(updatedList);
-      setAdded(true);
-    }
-    console.log(movieList);
-  };
+  const onAddToList = (movie) => {
+    setMovieList([...movieList, movie]);
+    setAdded(true);
+  }
   return (
     <AppContext.Provider
       value={{

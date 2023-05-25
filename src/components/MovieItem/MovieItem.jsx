@@ -10,7 +10,7 @@ import { useContext } from "react";
 
 const MovieItem = (props) => {
   const { movie, listTitle, onHandleClick } = props;
-  const { onAddToList, added } = useContext(AppContext);
+  const { added } = useContext(AppContext);
   const [played, setPlayed] = useState(false);
   const { title, backdrop_path, poster_path, id, vote_average } = movie;
   const truncate = (str, n) => {
@@ -39,9 +39,7 @@ const MovieItem = (props) => {
           </span>
           <p className="movie-item-overview">{truncate(movie?.overview, listTitle === "Popular Movie" ? 100 : 275)}</p>
           <button
-            className={added ? "addToList disabled" : "notAddToList"}
-            disabled={added}
-            onClick={() => onAddToList(id, movie)}
+            className={added ? "addToList" : "notAddToList"}
           >
             {added ? "Added" : "Add to List"}
           </button>

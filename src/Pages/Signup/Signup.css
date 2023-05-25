@@ -1,5 +1,4 @@
 .register {
-  width: 100vw;
   height: 100vh;
   background: linear-gradient(
       to bottom,
@@ -8,6 +7,7 @@
     ),
     url(../../../public/images/back-ground-image.webp);
   background-size: cover;
+  position: relative;
 }
 .sign-up-wrapper {
   padding: 20px 50px;
@@ -15,9 +15,8 @@
   align-items: center;
   justify-content: space-between;
 }
-.logo {
+.sign-up-logo {
   height: 40px;
-  width: auto;
 }
 .loginButton {
   background-color: red;
@@ -28,80 +27,85 @@
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s;
   z-index: 100;
 }
-.loginButton:hover {
-  background-color: darkred;
-}
 
 .sign-up-container {
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
 }
-.sign-up-container {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-.sign-up-container h1 {
-  font-size: 50px;
-  font-weight: 500;
-}
-.sign-up-container h2 {
-  margin: 20px;
-}
 
-.sign-up-container p {
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.sign-up-container .input {
-  width: 50%;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 20px;
-  height: 50px;
+.sign-up-container .sign-up-form {
+  width: 350px;
+  height: calc(350px * 1.618);
+  padding: 30px;
   border-radius: 5px;
+  background-color: #0b0b0b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: -1000px;
 }
 
-.sign-up-container .input input {
-  flex: 9;
-  height: 100%;
+.sign-up-container .sign-up-form input {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 10px 0;
   border: none;
-  padding: 0 10px;
+  border-radius: 2px;
+  font-size: 16px;
+  background-color: gray;
+  color: #fff;
 }
 
-.sign-up-container .registerButton {
-  flex: 3;
-  height: 100%;
+.sign-up-form input::placeholder {
+  color: lightgrey;
+}
+
+.sign-up-container button {
+  height: 40px;
+  border-radius: 5px;
   background-color: red;
-  border: none;
   color: white;
-  font-size: 22px;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.1s ease-in-out;
-  text-align: center;
 }
 
 .sign-up-container .registerButton:hover {
   background-color: darkred;
+}
+
+.alert {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 0;
+  padding: 0;
+  height: 1px;
+  width: 100%;
+}
+
+.sign-up-form span {
+  color: lightgrey;
+  font-size: 14px;
+  text-align: center;
+}
+
+.sign-up-form .b {
+  color: white;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.sign-up-form .b:hover b {
+  text-decoration: underline;
+  font-size: 103%;
 }

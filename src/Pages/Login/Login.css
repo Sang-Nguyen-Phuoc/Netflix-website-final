@@ -1,5 +1,4 @@
 .login {
-  width: 100vw;
   height: 100vh;
   background: linear-gradient(
       to bottom,
@@ -70,7 +69,6 @@
   font-weight: 500;
   cursor: pointer;
 }
-
 .login-form span {
   color: lightgrey;
   font-size: 14px;
@@ -86,4 +84,13 @@
 .login-form .b:hover b {
   text-decoration: underline;
   font-size: 103%;
+}
+
+.alert {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 0;
+  padding: 0;
+  height: 1px;
+  width: 100%;
 }
