@@ -54,15 +54,9 @@ const MovieDetail = () => {
             </div>
             <div className="movie-detail">
                 <div className="movie-img">
-                    <img src={`${PREFIX_IMAGE}${poster_path}`} alt="title" />
+                    <img src={`${PREFIX_IMAGE}${poster_path}`} alt={title} />
                 </div>
                 <div className="movie-info">
-                    {/* {tagline && <div className="blockquote-wrapper">
-                        <div className="blockquote">
-                            <h2>{tagline}</h2>
-                            <h4>—Tag line—<br /><em>{title}</em></h4>
-                        </div>
-                    </div>} */}
                     <div className="movie-info-overview">
                         <div className="overview">Overview</div>
                         <p> {overview}</p>

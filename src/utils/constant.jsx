@@ -15,4 +15,6 @@ export const API_MOVIES_URL = {
     DISCOVER_MOVIE: `${BASE_API_URL}/discover/movie?api_key=${API_KEY}`,
     DISCOVER_TV: `${BASE_API_URL}/discover/tv?api_key=${API_KEY}`,
     MOVIE_DETAIL: `${BASE_API_URL}/movie/`,
+
 }
+

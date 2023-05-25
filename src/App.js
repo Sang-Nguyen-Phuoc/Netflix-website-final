@@ -13,8 +13,7 @@ import MyList from './Pages/MyList/MyList';
 
 
 function App() {
-  const [movieList, setMovieList] = useState([]);
-  const [added, setAdded] = useState(false);
+  const [myList, setMyList] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const onAuthenticated = (status) => {
     setIsAuthenticated(status);
@@ -24,18 +23,26 @@ function App() {
     onAuthenticated();
   }, []);
 
-  const onAddToList = (movie) => {
-    setMovieList([...movieList, movie]);
-    setAdded(true);
-  }
+  // Function to check if a movie is added to the list
+  const isMovieAdded = (movieId) => {
+    return myList.some((id) => id === movieId);
+  };
+
+  // Add a movie to the list
+  const addMovieToList = (movieId) => {
+    const isAdded = isMovieAdded(movieId);
+    if (!isAdded) {
+      setMyList([...myList, movieId]);
+    }
+  };
+
   return (
     <AppContext.Provider
       value={{
-        movieList,
-        onAddToList,
-        added,
-        onAuthenticated,
+        onAddToList: addMovieToList,
+        onAuthenticated: onAuthenticated,
         isAuthenticated,
+        myList,
       }}
     >
       < div className="App container">

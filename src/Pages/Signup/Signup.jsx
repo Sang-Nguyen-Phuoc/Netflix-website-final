@@ -44,8 +44,6 @@ const Signup = () => {
     });
   };
 
-  console.log(isAuthenticated);
-
 
   return (
     <div className="register">

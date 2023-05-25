@@ -1,0 +1,56 @@
+.my-list-container {
+  margin-left: 25px;
+}
+
+.my-list-movie {
+  margin-top: 26px;
+  display: flex;
+  border: 1px dashed #fff;
+}
+.my-list-movie-img {
+  display: flex;
+  width: 30%;
+  margin-right: -10%;
+}
+.my-list-movie-img img {
+  height: 80%;
+  object-fit: contain;
+  width: 60%;
+}
+
+.my-list-movie-info {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  width: 50%;
+}
+.my-list-overview {
+  margin-top: 10px;
+  font-size: 32px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.my-list-categories {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  text-align: center;
+  align-items: center;
+}
+
+.my-list-vote {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: -30px;
+  font-size: 23px;
+}
+
+.my-list-release-date {
+  margin-top: -15px;
+  width: 210px;
+  height: 50px;
+  font-size: 22px;
+  text-align: center;
+}
