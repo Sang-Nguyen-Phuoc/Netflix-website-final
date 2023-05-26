@@ -8,6 +8,15 @@
   border: 1px dotted #fff;
   box-shadow: 10px 10px 5px rgb(246, 169, 3);
 }
+
+.movie-name {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.movie-more-info {
+  margin-top: 10px;
+}
 .my-movie-list-img {
   display: flex;
   width: 30%;
@@ -36,7 +45,7 @@
 .my-movie-list-categories {
   display: flex;
   gap: 10px;
-  margin-top: 6px;
+  margin-top: 0px;
   text-align: center;
   align-items: center;
 }
@@ -74,4 +83,8 @@
   color: red;
   cursor: pointer;
   transform: scale(1.2);
+}
+
+.my-movie-list-genres {
+  font-size: 22px;
 }

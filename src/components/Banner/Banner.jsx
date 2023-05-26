@@ -63,7 +63,7 @@ const Banner = () => {
                             <span className="icon"><BsPlayFill /></span>
                             <span>Trailer</span>
                         </button>
-                        <Link to={`/movies/${movie?.id}`}>
+                        <Link to={`/movie/${movie?.id}`}>
                             <button className="banner__button">
                                 <span className="icon"><AiOutlineInfoCircle /></span>
                                 <span>Info</span>

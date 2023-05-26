@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import AppContext from '../src/contexts/AppContext';
 import MyList from './Pages/MyList/MyList';
 import TVDetail from './Pages/TVDetail/TVDetail';
+import Search from './Pages/Search/Search';
 
 
 function App() {
@@ -87,11 +88,12 @@ function App() {
           <Route path="/Mylist" element={<MyList />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/Movies" element={<Movies />} />
+          <Route path="/movies" element={<Movies />} />
           <Route path="/TVSeries" element={<TVSeries />} />
           <Route path="/movie/:movieId" element={<MovieDetail />} />
           <Route path="/tv/:tvId" element={<TVDetail />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
 
       </div>

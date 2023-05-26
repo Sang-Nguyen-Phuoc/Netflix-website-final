@@ -7,6 +7,16 @@
   border: 1px dotted #fff;
   box-shadow: 10px 10px 5px rgb(246, 169, 3);
 }
+
+.tv-name {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.tv-more-info {
+  margin-top: 10px;
+}
 .my-tv-list-img {
   display: flex;
   width: 30%;
@@ -74,4 +84,9 @@
 
   cursor: pointer;
   transform: scale(1.2);
+}
+
+.my-tv-list-ori-name {
+  margin-bottom: 10px;
+  font-size: 22px;
 }
