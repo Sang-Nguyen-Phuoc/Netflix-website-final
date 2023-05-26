@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import useFetch from '../../hooks/useFetch/useFetch';
 import { PREFIX_IMAGE } from '../../utils/constant';
-import "./MovieDetail.css";
+import "./TVDetail.css";
 import Header from "../../layouts/Header/Header";
 import { BASE_API_URL, API_KEY } from '../../utils/constant';
 import movieTrailer from "movie-trailer";
@@ -14,13 +14,13 @@ import { CiPlay1 } from 'react-icons/ci';
 import AppContext from "../../contexts/AppContext";
 import Loading from "../../components/Loading/Loading";
 
-const MovieDetail = () => {
-    const { onAddMovieToList } = useContext(AppContext);
+const TVDetail = () => {
+    const { onAddTVToList } = useContext(AppContext);
     const params = useParams();
-    const { movieId } = params;
-    const movieDetailAPIUrl = `${BASE_API_URL}/movie/${movieId}?api_key=${API_KEY}`;
-    const { data: movieDetail, isLoading } = useFetch(movieDetailAPIUrl, {});
-    const { title, poster_path, overview, vote_average, release_date, genres, runtime, id } = movieDetail;
+    const { tvId } = params;
+    const tvDetailAPIUrl = `${BASE_API_URL}/tv/${tvId}?api_key=${API_KEY}`;
+    const { data: tvDetail, isLoading } = useFetch(tvDetailAPIUrl, {});
+    const { name, poster_path, overview, vote_average, first_air_date, episode_number, id, original_name } = tvDetail;
     const [trailerUrl, setTrailerUrl] = useState("");
     const opts = {
         height: "390",
@@ -30,46 +30,44 @@ const MovieDetail = () => {
         },
     };
 
-    const onHandleClick = (movie) => {
+    const onHandleClick = (tv) => {
         if (trailerUrl) {
             setTrailerUrl("");
         } else {
-            movieTrailer(movie?.title || movie?.name || movie?.original_name || "")
+            movieTrailer(tv?.title || tv?.name || tv?.original_name || "")
                 .then((url) => {
                     const urlParams = new URLSearchParams(new URL(url).search);
                     setTrailerUrl(urlParams.get("v"));
-                    console.log(urlParams.get("v"));
                 })
                 .catch((error) => console.log(error));
         }
     };
-
     return (
         <>
             {isLoading ? <div><Loading /></div> :
                 (
-                    <div className="movie-detail-container" >
+                    <div className="tv-detail-container" >
                         <div><Header /></div>
                         <div className='singleHeading'>
-                            <h1>{title} </h1> <span> | {runtime} mins | </span> <span> HD </span>
+                            <h1>{name} </h1> <span> | {episode_number} Episodes | </span> <span> HD </span>
                         </div>
-                        <div className="movie-detail">
-                            <div className="movie-img">
-                                <img src={`${PREFIX_IMAGE}${poster_path}`} alt={title} />
+                        <div className="tv-detail">
+                            <div className="tv-img">
+                                <img src={`${PREFIX_IMAGE}${poster_path}`} alt={name} />
                             </div>
-                            <div className="movie-info">
-                                <div className="movie-info-overview">
+                            <div className="tv-info">
+                                <div className="tv-info-overview">
                                     <div className="overview">Overview</div>
                                     <p> {overview}</p>
                                     <div className="categories">
                                         <span className="vote">{vote_average} <BsStarFill /></span>
-                                        <span className="release-date">Released: {release_date}</span>
+                                        <span className="release-date">Released: {first_air_date}</span>
                                     </div>
-                                    <span className="genres">Genres: {genres && genres.map((genre) => genre.name).join(", ")}</span>
+                                    <span className="ori-name">Original name: {original_name}</span>
                                     <div className="trailer">
-                                        <button className="play-trailer" onClick={() => onHandleClick(movieDetail)}> <CiPlay1 className="play-icon" /> Play Trailer</button>
+                                        <button className="play-trailer" onClick={() => onHandleClick(tvDetail)}> <CiPlay1 className="play-icon" /> Play Trailer</button>
                                         <button
-                                            onClick={() => onAddMovieToList(id)}
+                                            onClick={() => onAddTVToList(id)}
                                             className="button-64-detail"
                                         ><span className="text">Add to list</span>
                                         </button>
@@ -87,4 +85,4 @@ const MovieDetail = () => {
     );
 };
 
-export default MovieDetail;
+export default TVDetail

@@ -24,6 +24,24 @@
   background-color: #111;
 }
 
+.my-list {
+  position: relative;
+  margin-top: 4px;
+  transition: all 0.2s;
+}
+
+.movie-quantity {
+  border-radius: 45%;
+  background-color: #ef370e;
+  color: #fff;
+  position: absolute;
+  width: 18px;
+  height: 26px;
+  top: -6px;
+  right: -6px;
+  text-align: center;
+}
+
 .nav__logo {
   width: 80px;
   object-fit: contain;
@@ -58,14 +76,17 @@
   color: #111;
   text-decoration: none;
   padding: px 8px;
-  font-size: 1.2rem;
-  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .nav_options_black .nav_option:hover {
-  background-color: #ef370e;
+  text-decoration: none;
+  border-radius: 50px;
+}
+
+.nav_options_black .my-list:hover {
+  scale: 1.05;
   text-decoration: none;
   border-radius: 50px;
 }

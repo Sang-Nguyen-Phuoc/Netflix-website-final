@@ -10,7 +10,7 @@ import { useContext } from "react";
 
 const MovieItem = (props) => {
   const { movie, listTitle, onHandleClick } = props;
-  const { myList, onAddToList } = useContext(AppContext);
+  const { onAddMovieToList } = useContext(AppContext);
   const [played, setPlayed] = useState(false);
   const { title, backdrop_path, poster_path, id, vote_average } = movie;
   const truncate = (str, n) => {
@@ -33,15 +33,14 @@ const MovieItem = (props) => {
             <BsPlayFill onClick={() => { onPlay(played); onHandleClick(movie); }} className={!played ? "icon-play" : "icon-play-active"} />
           </span>
           <span>
-            <Link to={`/movies/${movie?.id}`} className="icon-info">
+            <Link to={`/movie/${movie?.id}`} className="icon-info">
               <AiOutlineInfoCircle className="icon-info" />
             </Link>
           </span>
           <p className="movie-item-overview">{truncate(movie?.overview, listTitle === "Popular Movie" ? 100 : 275)}</p>
           <button
-            onClick={() => onAddToList(id)}
+            onClick={() => onAddMovieToList(id)}
             className="button-64"
-            role="button"
           ><span className="text">Add to list</span>
           </button>
         </div>

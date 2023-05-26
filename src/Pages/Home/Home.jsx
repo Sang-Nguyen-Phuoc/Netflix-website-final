@@ -10,6 +10,7 @@ import Footer from "../../layouts/Footer/Footer";
 import Loading from "../../components/Loading/Loading";
 import AppContext from "../../contexts/AppContext";
 import Login from "../Login/Login";
+import TVList from "../../components/TVList/TVList";
 
 const Home = () => {
   const { isAuthenticated } = useContext(AppContext);
@@ -91,25 +92,25 @@ const Home = () => {
                 listTitle="Now Playing Movie"
                 movieData={nowPlayingMovies.results}
               />
-              <MovieList
+              <TVList
                 listTitle="Discover Movie"
-                movieData={DISCOVER_MOVIE.results}
+                TVData={DISCOVER_MOVIE.results}
               />
-              <MovieList
+              <TVList
                 listTitle="Trending TV Series"
-                movieData={TV_LIST_TRENDING.results}
+                TVData={TV_LIST_TRENDING.results}
               />
-              <MovieList
+              <TVList
                 listTitle="Popular TV Series"
-                movieData={TV_LIST_POPULAR.results}
+                TVData={TV_LIST_POPULAR.results}
               />
-              <MovieList
+              <TVList
                 listTitle="Top Rated TV Series"
-                movieData={TV_LIST_TOP_RATED.results}
+                TVData={TV_LIST_TOP_RATED.results}
               />
-              <MovieList
+              <TVList
                 listTitle="Discover TV Series"
-                movieData={DISCOVER_TV.results}
+                TVData={DISCOVER_TV.results}
               />
               <Footer />
             </main>

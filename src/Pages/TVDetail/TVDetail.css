@@ -1,4 +1,4 @@
-.movie-detail-container {
+.tv-detail-container {
   background-color: #fff;
   height: 90px;
 }
@@ -25,27 +25,27 @@
   font-size: 20px;
 }
 
-.movie-detail {
+.tv-detail {
   margin-top: 26px;
   display: flex;
   gap: 22px;
 }
-.movie-img {
+.tv-img {
   display: flex;
   width: 30%;
   height: 800px;
 }
-.movie-detail img {
+.tv-detail img {
   width: auto;
   height: 60%;
   object-fit: contain;
 }
-.movie-info {
+.tv-info {
   display: flex;
   flex-direction: column;
   height: 800px;
 }
-.movie-info-overview {
+.tv-info-overview {
   color: #fff;
   text-decoration: solid;
   width: 75%;
@@ -73,7 +73,7 @@
 }
 
 .release-date,
-.genres {
+.ori-name {
   margin-top: 22px;
   width: 200px;
   height: 50px;
@@ -83,8 +83,8 @@
 }
 
 /* design button play trailer */
-.trailer {
-  margin-left: -40%;
+.tv-trailer {
+  margin-left: -38%;
   display: flex;
   gap: 35px;
   justify-content: center;

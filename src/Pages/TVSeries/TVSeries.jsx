@@ -1,4 +1,4 @@
-import MovieList from "../../components/MovieList/MovieList";
+import TVList from "../../components/TVList/TVList";
 import { API_MOVIES_URL } from "../../utils/constant";
 import useFetch from "../../hooks/useFetch/useFetch";
 import Banner from "../../components/Banner/Banner";
@@ -24,21 +24,21 @@ const Profile = () => {
                 <main>
                     <Header />
                     <Banner />
-                    <MovieList
+                    <TVList
                         listTitle="Trending TV Series"
-                        movieData={TV_LIST_TRENDING.results}
+                        TVData={TV_LIST_TRENDING.results}
                     />
-                    <MovieList
+                    <TVList
                         listTitle="Popular TV Series "
-                        movieData={TV_LIST_POPULAR.results}
+                        TVData={TV_LIST_POPULAR.results}
                     />
-                    <MovieList
+                    <TVList
                         listTitle="Top Rated TV Series"
-                        movieData={TV_LIST_TOP_RATED.results}
+                        TVData={TV_LIST_TOP_RATED.results}
                     />
-                    <MovieList
+                    <TVList
                         listTitle="Discover TV Series"
-                        movieData={DISCOVER_TV.results}
+                        TVData={DISCOVER_TV.results}
                     />
                     <Footer />
                 </main>

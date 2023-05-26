@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import AppContext from "../../contexts/AppContext";
 
 const Header = () => {
-  const { onAuthenticated } = useContext(AppContext);
+  const { onAuthenticated, myMovieList, myTVList } = useContext(AppContext);
   const [show, handleShow] = useState(false);
-
+  const myList = [...myMovieList, ...myTVList];
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
@@ -32,7 +32,10 @@ const Header = () => {
         <div className={`nav_options ${show && "nav_options_black"}`}>
           <Link to='/TVSeries' className="nav_option" > <span className="nav_option">TV series</span> </Link>
           <Link to='/Movies' className="nav_option"> <span className="nav_option">Movies</span> </Link>
-          <Link to='/Mylist' className="nav_option" ><span className="nav_option">My list</span> </Link>
+          <div className="my-list">
+            <Link to='/Mylist' className="nav_option my-list-option" ><span className="nav_option">My list</span> </Link>
+            {myList.length !== 0 && <span className="movie-quantity"><p className="number"> {myList.length} </p></span>}
+          </div>
         </div>
       </div>
       <div className="right">
