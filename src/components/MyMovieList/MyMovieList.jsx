@@ -11,11 +11,11 @@ const MyMovieList = (props) => {
         <div className='my-movie-list-container'>
             {movies.map((movie) => (
 
-                <div key={movie.id} className='my-list-movie'>
-                    <div className="my-movie-list-movie-img">
+                <div key={movie.id} className='my-movie-list'>
+                    <div className="my-movie-list-img">
                         <img src={`${PREFIX_IMAGE}${movie.poster_path}`} alt={movie.title} />
                     </div>
-                    <div className="my-movie-list-movie-info">
+                    <div className="my-movie-list-info">
                         <div className="my-movie-list-overview">{movie.title}</div>
                         <p> {movie.overview}</p>
                         <div className="my-movie-list-categories">

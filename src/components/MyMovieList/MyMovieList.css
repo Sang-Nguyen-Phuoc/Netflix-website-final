@@ -1,39 +1,39 @@
-.my-list-container {
-  margin-left: 25px;
+.my-movie-list-container {
+  margin-left: 24px;
 }
 
-.my-list-movie {
+.my-movie-list {
   margin-top: 26px;
   display: flex;
   border: 1px dotted #fff;
   box-shadow: 10px 10px 5px rgb(246, 169, 3);
 }
-.my-list-movie-img {
+.my-movie-list-img {
   display: flex;
   width: 30%;
   margin-right: -12%;
 }
-.my-list-movie-img img {
+.my-movie-list-img img {
   height: 90%;
   object-fit: contain;
   width: 50%;
 }
 
-.my-list-movie-info {
+.my-movie-list-info {
   display: flex;
   flex-direction: column;
   color: #fff;
   width: 50%;
   position: relative;
 }
-.my-list-overview {
+.my-movie-list-overview {
   margin-top: 10px;
   font-size: 32px;
   font-weight: 500;
   color: #fff;
 }
 
-.my-list-categories {
+.my-movie-list-categories {
   display: flex;
   gap: 10px;
   margin-top: 6px;
@@ -41,7 +41,7 @@
   align-items: center;
 }
 
-.my-list-vote {
+.my-movie-list-vote {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -49,10 +49,29 @@
   font-size: 23px;
 }
 
-.my-list-release-date {
+.my-movie-list-release-date {
   margin-top: -15px;
   width: 210px;
   height: 50px;
   font-size: 22px;
   text-align: center;
+}
+
+.my-movie-list-btn {
+  position: absolute;
+  right: -60%;
+  top: 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.my-movie-list-btn:hover {
+  color: red;
+  cursor: pointer;
+  transform: scale(1.2);
 }

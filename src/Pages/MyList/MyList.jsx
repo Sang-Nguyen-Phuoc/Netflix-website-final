@@ -50,7 +50,9 @@ const MyList = () => {
         fetchTVShows();
     }, [myTVList]);
 
-    setLoading(loadingMovie && loadingTv);
+    useEffect(() => {
+        setLoading(loadingMovie && loadingTv);
+    }, [loadingMovie, loadingTv]);
 
     return (
         <>
