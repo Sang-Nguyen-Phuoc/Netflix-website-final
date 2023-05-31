@@ -19,6 +19,7 @@
   display: flex;
   align-items: center;
   gap: 24px;
+  margin-right: 25px;
 }
 .nav__black {
   background-color: #111;
