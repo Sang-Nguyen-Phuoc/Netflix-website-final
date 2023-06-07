@@ -18,6 +18,7 @@ const Signup = () => {
   const navigate = useNavigate();
 
 
+
   const onHandleSignUp = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password).then(() => {

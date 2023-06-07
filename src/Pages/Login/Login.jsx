@@ -18,6 +18,8 @@ const Login = () => {
   const [isLoading, setisLoading] = useState(true);
   const { isAuthenticated, onAuthenticated } = useContext(AppContext);
   const navigate = useNavigate();
+
+
   const handleLogin = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password).then(() => {

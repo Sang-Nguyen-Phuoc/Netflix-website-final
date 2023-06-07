@@ -20,4 +20,3 @@ export const API_MOVIES_URL = {
 
 }
 
-// https://api.themoviedb.org/movie/3385687?api_key=c2077b3b345882782397016e1fdc388b&language=en-US
